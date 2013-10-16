@@ -34,7 +34,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}✭%{$reset_color%}"
 prompt_vcs () {
 
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ":vcs_info:*" formats " [%F{red}%b%c%u %$(git_prompt_status)%B %$(git_remote_status)%F{green}"
+        zstyle ":vcs_info:*" formats " [%F{red}%b%c%u %$(git_prompt_status)%B %$(git_remote_status)%F{green}]"
     } else {
         zstyle ":vcs_info:*" formats " [%F{red}%b%c%u%B%F{red}● %$(git_prompt_status) %$(git_remote_status)%F{green}]"
     }
