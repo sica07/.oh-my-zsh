@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 local USER_HOST='%{$terminfo[bold]$fg[yellow]%}%n@%m%{$reset_color%}'
 local RETURN_CODE="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
-local GIT_BRANCH='%{$terminfo[bold]$fg[red]%}$(git_prompt_info)%{$reset_color%}'
+local GIT_BRANCH='%{$terminfo[bold]$fg[red]%}$(git_prompt_status)%{$reset_color%}'
 local CURRENT_DIR='%{$terminfo[bold]$fg[green]%} %~%{$reset_color%}'
 local RUBY_RVM='%{$fg[gray]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
 local COMMAND_TIP='%{$terminfo[bold]$fg[blue]%}$(wget -qO - http://www.commandlinefu.com/commands/random/plaintext | sed 1d | sed '/^$/d' | sed 's/^/║/g')%{$reset_color%}'

@@ -47,6 +47,8 @@ git_remote_status() {
         then
             echo "$ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE"
         fi
+        if [ $ahead -eq 0 ] && [ $behind -eq 0 ]
+            echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
     fi
 }
 
@@ -63,8 +65,7 @@ function git_prompt_short_sha() {
 }
 
 # Formats prompt string for current git commit long SHA
-function git_prompt_long_sha() {
-  SHA=$(command git rev-parse HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
+function git_prompt_long_sha() { SHA=$(command git rev-parse HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
 }
 
 # Get the status of the working tree

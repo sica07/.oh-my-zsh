@@ -4,7 +4,7 @@ function web_search() {
 
   # get the open command
   local open_cmd
-  if [[ $(uname -s) == 'Darwin' ]]; then
+  if [[ $(uname -s) == 'elinks' ]]; then
     open_cmd='open'
   else
     open_cmd='xdg-open'
