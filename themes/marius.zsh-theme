@@ -23,20 +23,27 @@ ZSH_THEME_GIT_PROMPT_PREFIX="‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$GIT_PROMPT_INFO%}›"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✘%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}✔%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[blue]%}✚%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[blue]%}✹%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}➜%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[blue]%}⚡%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}✭%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[blue]%}⊕%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[blue]%}⊙%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}⊗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}⊘%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[blue]%}⊜%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}⊖%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[blue]%}✚%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg_bold[blue]%}⚡%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}➜%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[blue]%}⇷%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[blue]%}‽{$reset_color%}"
+
 ########## GIT ###########
 
 prompt_vcs () {
 
     if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-        zstyle ":vcs_info:*" formats " [%F{red}%b%c%u %$(git_prompt_status)%B %$(git_remote_status)%F{green}]"
+        zstyle ":vcs_info:*" formats " [%F{red}%b%c%u %$(git_prompt_status)%B%F{green}]%$(git_remote_status)"
     } else {
-        zstyle ":vcs_info:*" formats " [%F{red}%b%c%u%B%F{red}● %$(git_prompt_status) %$(git_remote_status)%F{green}]"
+        zstyle ":vcs_info:*" formats " [%F{red}%b%c%u%B%F{red}● %$(git_prompt_status)%F{green}]%$(git_remote_status)"
     }
 
     vcs_info

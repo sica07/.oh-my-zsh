@@ -1,13 +1,3 @@
-# Super user
-alias _='sudo'
-alias please='sudo'
-
-
-# Show history
-alias h='fc -l 1'
-
-
-
 # safety features
 alias cp='cp -i'
 alias mv='mv -i'
@@ -20,11 +10,6 @@ alias gcala='gcalcli agenda'
 alias gcalr='gcalcli remind 10 "kdialog --msgbox \%s"'
 
 #radios
-alias bluefm='mplayer http://zoo.inlive.co.kr:8080'
-alias lounge='mplayer http://www.lounge-radio.com/listen128.m3u'
-alias sunshine='mplayer http://62.27.44.60:80/sunshinelive/livestream.mp3'
-alias work='mplayer http://wms-19.streamsrus.com/atwork-aac'
-alias house='mplayer http://wms-19.streamsrus.com/electrohouse-aac'
 alias classic='mplayer http://stream2137.init7.net:80'
 alias commodore='mplayer http://relay1.slayradio.org:8000/'
 
@@ -38,15 +23,18 @@ alias lx='ll -BX'                   # sort by extension
 alias lz='ll -rS'                   # sort by size
 alias ld='ll -rt'                   # sort by date
 
-alias _="sudo"
 
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 alias ping='ping -c 5'
 
+alias bc='boc -l'
+
 # privileged access
 if [ $UID -ne 0 ]; then
+    alias _='sudo'
+    alias please='sudo' #just for fun
     alias sudo='sudo '
     alias scat='sudo cat'
     alias svim='sudo vim'
@@ -56,10 +44,18 @@ if [ $UID -ne 0 ]; then
 fi
 
 
-alias c='clear'
+alias j='jump'
 alias k='clear'
 alias cls='clear'
 alias td='/usr/local/sbin/todo'
+
+#mysql
+alias sql='mysql -u root -pmatpas'
+
+#hamster time tracker
+alias tta='hamster-cli start'
+alias tts='hamster-cli stop'
+alias ttls='hamster-cli list'
 
 #less with color
 alias less='vim -u /usr/share/vim/macros/less.vim'
@@ -71,14 +67,13 @@ alias q='exit'
 
 alias irc="$IRC_CLIENT"
 
-alias rb='ruby'
 
 alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
 alias ....='cd ../../..' # Go up three directories
 alias -- -='cd -'        # Go back
 #Multi monitor
-#alias standup='xrandr --output VGA-1 --auto --same-as HDMI-1'
+alias both='xrandr --output VGA-1 --auto --left-of HDMI-1'
 alias standup='xrandr --output VGA-1 --auto --same-as HDMI-1 && xrandr --output HDMI-1 --off'
 alias sit='xrandr --output HDMI-1 --auto --same-as VGA-1 && xrandr --output VGA-1 --off'
 # Shell History
@@ -102,5 +97,11 @@ export IRC_CLIENT=weechat
 
 #LOCAL CONFIG
 export PATH=/opt/lampp/bin:$PATH
-alias fsp='cd /var/www/html/FSPlaza'
 alias err='FILE=$(ls -t /var/www/html/FSPlaza/data/logs | head --lines=1) && less /var/www/html/FSPlaza/data/logs/$FILE'
+
+
+#phpcs hack 
+alias phpcs='phpcs -n'
+
+alias myip='curl ifconfig.me/ip'
+alias screencast='ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg'
