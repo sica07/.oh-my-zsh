@@ -29,7 +29,7 @@ alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 alias ping='ping -c 5'
 
-alias bc='boc -l'
+alias bc='bc -l'
 
 # privileged access
 if [ $UID -ne 0 ]; then
