@@ -30,6 +30,8 @@ alias mkdir='mkdir -p -v'
 alias ping='ping -c 5'
 
 alias bc='bc -l'
+alias phpcc='phpunit --coverage-clover /tmp/report/clover.xml'
+alias pu='phpunit --coverage-html /tmp/report'
 
 # privileged access
 if [ $UID -ne 0 ]; then
