@@ -74,10 +74,12 @@ alias ..='cd ..'         # Go up one directory
 alias ...='cd ../..'     # Go up two directories
 alias ....='cd ../../..' # Go up three directories
 alias -- -='cd -'        # Go back
+
 #Multi monitor
 alias both='xrandr --output VGA-1 --auto --left-of HDMI-1'
 alias standup='xrandr --output VGA-1 --auto --same-as HDMI-1 && xrandr --output HDMI-1 --off'
 alias sit='xrandr --output HDMI-1 --auto --same-as VGA-1 && xrandr --output VGA-1 --off'
+
 # Shell History
 alias h='history'
 
@@ -107,3 +109,4 @@ alias phpcs='phpcs -n'
 
 alias myip='curl ifconfig.me/ip'
 alias screencast='ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg'
+alias http='python -m SimpleHTTPServer'
