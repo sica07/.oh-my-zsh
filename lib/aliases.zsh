@@ -24,7 +24,7 @@ alias lz='ll -rS'                   # sort by size
 alias ld='ll -rt'                   # sort by date
 
 
-alias diff='colordiff'              # requires colordiff package
+#alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 alias ping='ping -c 5'
@@ -109,4 +109,4 @@ alias phpcs='phpcs -n'
 
 alias myip='curl ifconfig.me/ip'
 alias screencast='ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg'
-alias http='python -m SimpleHTTPServer'
+alias http='php -S localhost:8000'
