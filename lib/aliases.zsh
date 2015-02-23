@@ -12,6 +12,7 @@ alias gcalr='gcalcli remind 10 "kdialog --msgbox \%s"'
 #radios
 alias classic='mplayer http://stream2137.init7.net:80'
 alias commodore='mplayer http://relay1.slayradio.org:8000/'
+alias radio='mplayer -playlist ~/.radio/'
 
 # List directory contents
 alias gti=git
@@ -110,3 +111,7 @@ alias phpcs='phpcs -n'
 alias myip='curl ifconfig.me/ip'
 alias screencast='ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg'
 alias http='php -S localhost:8000'
+
+#aliases specific to a station
+alias cl='sudo rm -rf /tmp/cachegrind.out.*'
+alias bhtunnel='ssh -L localhost:2000:localhost:3306 serverpilot@128.199.169.220'
