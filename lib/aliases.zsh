@@ -3,12 +3,6 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-#gcalcli
-alias gcal='gcalcli calw'
-alias gcalm='gcalcli calm'
-alias gcala='gcalcli agenda'
-alias gcalr='gcalcli remind 10 "kdialog --msgbox \%s"'
-
 #radios
 alias classic='mplayer http://stream2137.init7.net:80'
 alias commodore='mplayer http://relay1.slayradio.org:8000/'
@@ -20,9 +14,9 @@ alias g=git
 alias sl=ls
 alias ls='ls -hF --color=always'
 alias la='ls -AF'       # Compact view, show hidden
-alias lx='ll -BX'                   # sort by extension
-alias lz='ll -rS'                   # sort by size
-alias ld='ll -rt'                   # sort by date
+alias lx='ls -BX'                   # sort by extension
+alias lz='ls -rS'                   # sort by size
+alias ld='ls -rt'                   # sort by date
 
 
 #alias diff='colordiff'              # requires colordiff package
@@ -50,15 +44,9 @@ fi
 alias j='jump'
 alias k='clear'
 alias cls='clear'
-alias td='/usr/local/sbin/todo'
 
 #mysql
-alias sql='mysql -u root -pmatpas'
 
-#hamster time tracker
-alias tta='hamster-cli start'
-alias tts='hamster-cli stop'
-alias ttls='hamster-cli list'
 
 #less with color
 alias less='vim -u /usr/share/vim/macros/less.vim'
@@ -99,11 +87,8 @@ export EDITOR=vim
 export BUSTER_REPORTER=specification
 export LESS='eirMX'
 export IRC_CLIENT=weechat
-
-#LOCAL CONFIG
-export PATH=/opt/lampp/bin:$PATH
-alias err='FILE=$(ls -t /var/www/html/FSPlaza/data/logs | head --lines=1) && less /var/www/html/FSPlaza/data/logs/$FILE'
-
+export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 #phpcs hack 
 alias phpcs='phpcs -n'
@@ -115,3 +100,8 @@ alias http='php -S localhost:8000'
 #aliases specific to a station
 alias cl='sudo rm -rf /tmp/cachegrind.out.*'
 alias bhtunnel='ssh -L localhost:2000:localhost:3306 serverpilot@128.199.169.220'
+
+
+#docker aliases
+alias phpqa='docker run --rm -u "$UID" -v "$PWD:/app" eko3alpha/docker-phpqa'
+alias dockercl='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
